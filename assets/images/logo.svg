@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Blood Donor Finder Logo">
+  <defs>
+    <linearGradient id="dropGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E63946"/>
+      <stop offset="100%" stop-color="#B71C1C"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="#FFE5E5"/>
+  <path d="M24 8C24 8 12 21.2 12 29.5C12 36.1 17.4 41 24 41C30.6 41 36 36.1 36 29.5C36 21.2 24 8 24 8Z" fill="url(#dropGrad)"/>
+  <path d="M22.2 24.5H25.8V28.2H29.5V31.8H25.8V35.5H22.2V31.8H18.5V28.2H22.2V24.5Z" fill="#FFFFFF"/>
+</svg>

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 440" width="560" height="440" role="img" aria-label="Blood donation healthcare illustration">
+  <defs>
+    <linearGradient id="bgCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FFF5F5"/>
+    </linearGradient>
+    <linearGradient id="primaryDrop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#B91C1C"/>
+    </linearGradient>
+    <filter id="softShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#212529" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Soft background blobs -->
+  <circle cx="445" cy="95" r="78" fill="#FFE5E5" opacity="0.85"/>
+  <circle cx="105" cy="345" r="64" fill="#FFE5E5" opacity="0.7"/>
+  <circle cx="468" cy="336" r="36" fill="#D62828" opacity="0.1"/>
+
+  <!-- Main dashboard preview card -->
+  <rect x="64" y="44" width="432" height="340" rx="24" fill="url(#bgCard)" stroke="#F1D5D5" stroke-width="1.5" filter="url(#softShadow)"/>
+
+  <!-- Top bar inside card -->
+  <circle cx="96" cy="76" r="6" fill="#D62828"/>
+  <circle cx="116" cy="76" r="6" fill="#F59E0B"/>
+  <circle cx="136" cy="76" r="6" fill="#16A34A"/>
+  <rect x="332" y="66" width="132" height="20" rx="10" fill="#FFE5E5"/>
+  <text x="398" y="80" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="11" font-weight="700" fill="#D62828">EMERGENCY READY</text>
+
+  <!-- Center Blood Drop Emblem -->
+  <circle cx="204" cy="212" r="82" fill="#FFE5E5" opacity="0.65"/>
+  <circle cx="204" cy="212" r="64" fill="#FFFFFF" stroke="#FFD0D0" stroke-width="2"/>
+  <path d="M204 162C204 162 169 201 169 224.5C169 244.2 184.7 259 204 259C223.3 259 239 244.2 239 224.5C239 201 204 162 204 162Z" fill="url(#primaryDrop)"/>
+  <path d="M198 210H210V221H221V233H210V244H198V233H187V221H198V210Z" fill="#FFFFFF"/>
+
+  <!-- Pulse Line -->
+  <path d="M92 328H154L172 302L192 348L212 316L226 328H310" fill="none" stroke="#D62828" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Right side donor match mini cards -->
+  <g filter="url(#softShadow)">
+    <rect x="316" y="122" width="152" height="62" rx="14" fill="#FFFFFF" stroke="#EAECEF"/>
+    <rect x="328" y="136" width="34" height="34" rx="10" fill="#FFE5E5"/>
+    <text x="345" y="158" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="14" font-weight="800" fill="#D62828">O-</text>
+    <rect x="372" y="140" width="76" height="8" rx="4" fill="#212529" opacity="0.8"/>
+    <rect x="372" y="156" width="54" height="7" rx="3.5" fill="#16A34A" opacity="0.75"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="316" y="198" width="152" height="62" rx="14" fill="#FFFFFF" stroke="#EAECEF"/>
+    <rect x="328" y="212" width="34" height="34" rx="10" fill="#FFE5E5"/>
+    <text x="345" y="234" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="14" font-weight="800" fill="#D62828">A+</text>
+    <rect x="372" y="216" width="80" height="8" rx="4" fill="#212529" opacity="0.8"/>
+    <rect x="372" y="232" width="60" height="7" rx="3.5" fill="#16A34A" opacity="0.75"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="316" y="274" width="152" height="62" rx="14" fill="#FFFFFF" stroke="#EAECEF"/>
+    <rect x="328" y="288" width="34" height="34" rx="10" fill="#FFE5E5"/>
+    <text x="345" y="310" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="800" fill="#D62828">AB+</text>
+    <rect x="372" y="292" width="72" height="8" rx="4" fill="#212529" opacity="0.8"/>
+    <rect x="372" y="308" width="48" height="7" rx="3.5" fill="#D62828" opacity="0.6"/>
+  </g>
+
+  <!-- Floating Verified Pill -->
+  <g filter="url(#softShadow)">
+    <rect x="32" y="114" width="144" height="44" rx="22" fill="#FFFFFF" stroke="#EAECEF"/>
+    <circle cx="56" cy="136" r="11" fill="#DCFCE7"/>
+    <path d="M51 136L54.5 139.5L61.5 132.5" fill="none" stroke="#15803D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="76" y="140" font-family="Segoe UI, system-ui, sans-serif" font-size="12" font-weight="700" fill="#212529">Quick Match</text>
+  </g>
+
+  <!-- Floating 24/7 Pill -->
+  <g filter="url(#softShadow)">
+    <rect x="374" y="354" width="154" height="46" rx="23" fill="#D62828"/>
+    <text x="451" y="382" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">1 Unit = 3 Lives</text>
+  </g>
+</svg>

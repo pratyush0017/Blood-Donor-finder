@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Blood Donor Finder helps connect patients with voluntary blood donors quickly during medical emergencies." />
+  <title>Blood Donor Finder — Donate Blood, Save Lives</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand" aria-label="Blood Donor Finder Home">
+        <img src="assets/images/logo.svg" alt="" class="brand-logo" width="40" height="40" />
+        <span>Blood<span class="brand-accent">Finder</span></span>
+      </a>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="find-donors.html" class="nav-link">Find Donors</a></li>
+          <li><a href="request-blood.html" class="nav-link">Request Blood</a></li>
+          <li><a href="register.html" class="nav-link">Register</a></li>
+          <li><a href="donor-dashboard.html" class="nav-link">Donor Panel</a></li>
+          <li><a href="admin-dashboard.html" class="nav-link">Admin</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="login.html" class="nav-link nav-link-cta">Demo Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow-pill">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Emergency Blood Coordination Platform
+          </span>
+          <h1 class="hero-title">Donate Blood, <span>Save Lives</span></h1>
+          <p class="hero-description">
+            Connect with verified voluntary blood donors in your city during critical medical emergencies. Search by blood group, submit urgent requests, or register as a life-saving donor in minutes.
+          </p>
+          <div class="hero-actions">
+            <a href="find-donors.html" class="btn btn-primary btn-lg">Find Donors</a>
+            <a href="register.html" class="btn btn-secondary btn-lg">Become a Donor</a>
+          </div>
+          <div class="hero-highlights">
+            <div class="hero-highlight-item">
+              <span class="hero-check" aria-hidden="true">&#10003;</span>
+              <span>8 Blood Groups Indexed</span>
+            </div>
+            <div class="hero-highlight-item">
+              <span class="hero-check" aria-hidden="true">&#10003;</span>
+              <span>Privacy-First Contact Requests</span>
+            </div>
+            <div class="hero-highlight-item">
+              <span class="hero-check" aria-hidden="true">&#10003;</span>
+              <span>Instant City Filtering</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img src="assets/images/hero-illustration.svg" alt="Healthcare blood donation matching dashboard illustration" width="560" height="440" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Eight Blood Group Cards -->
+    <section class="section" id="blood-groups">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow-pill">Quick Search by Group</span>
+          <h2>Browse All Eight Blood Groups</h2>
+          <p>Select any blood group below to filter matching donors in our directory immediately.</p>
+        </div>
+
+        <div class="blood-group-grid reveal">
+          <a href="find-donors.html?bloodGroup=A%2B" class="blood-card">
+            <div class="blood-drop-badge">A+</div>
+            <div class="blood-card-title">Group A Positive</div>
+            <div class="blood-card-meta">Donates to A+, AB+</div>
+            <span class="blood-card-count" data-blood-count="A+">2 Sample Donors</span>
+          </a>
+
+          <a href="find-donors.html?bloodGroup=A-" class="blood-card">
+            <div class="blood-drop-badge">A-</div>
+            <div class="blood-card-title">Group A Negative</div>
+            <div class="blood-card-meta">Donates to A-, A+, AB-, AB+</div>
+            <span class="blood-card-count" data-blood-count="A-">2 Sample Donors</span>
+          </a>
+
+          <a href="find-donors.html?bloodGroup=B%2B" class="blood-card">
+            <div class="blood-drop-badge">B+</div>
+            <div class="blood-card-title">Group B Positive</div>
+            <div class="blood-card-meta">Donates to B+, AB+</div>
+            <span class="blood-card-count" data-blood-count="B+">2 Sample Donors</span>
+          </a>
+
+          <a href="find-donors.html?bloodGroup=B-" class="blood-card">
+            <div class="blood-drop-badge">B-</div>
+            <div class="blood-card-title">Group B Negative</div>
+            <div class="blood-card-meta">Donates to B-, B+, AB-, AB+</div>
+            <span class="blood-card-count" data-blood-count="B-">2 Sample Donors</span>
+          </a>
+
+          <a href="find-donors.html?bloodGroup=AB%2B" class="blood-card">
+            <div class="blood-drop-badge">AB+</div>
+            <div class="blood-card-title">Group AB Positive</div>
+            <div class="blood-card-meta">Universal Recipient</div>
+            <span class="blood-card-count" data-blood-count="AB+">2 Sample Donors</span>
+          </a>
+
+          <a href="find-donors.html?bloodGroup=AB-" class="blood-card">
+            <div class="blood-drop-badge">AB-</div>
+            <div class="blood-card-title">Group AB Negative</div>
+            <div class="blood-card-meta">Rare Plasma &amp; Red Cell Group</div>
+            <span class="blood-card-count" data-blood-count="AB-">1 Sample Donor</span>
+          </a>
+
+          <a href="find-donors.html?bloodGroup=O%2B" class="blood-card">
+            <div class="blood-drop-badge">O+</div>
+            <div class="blood-card-title">Group O Positive</div>
+            <div class="blood-card-meta">Most Common Blood Group</div>
+            <span class="blood-card-count" data-blood-count="O+">3 Sample Donors</span>
+          </a>
+
+          <a href="find-donors.html?bloodGroup=O-" class="blood-card">
+            <div class="blood-drop-badge">O-</div>
+            <div class="blood-card-title">Group O Negative</div>
+            <div class="blood-card-meta">Universal Red Cell Donor</div>
+            <span class="blood-card-count" data-blood-count="O-">2 Sample Donors</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section section-white" id="how-it-works">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow-pill">Simple 3-Step Process</span>
+          <h2>How BloodFinder Works</h2>
+          <p>Designed for clarity and speed when every minute matters for patients and families.</p>
+        </div>
+
+        <div class="grid-3 reveal">
+          <article class="card card-hover step-card">
+            <div class="step-number">01</div>
+            <h3>Register or Search</h3>
+            <p>Voluntary donors sign up with their blood group, city, and availability, while families filter matching donors instantly.</p>
+          </article>
+
+          <article class="card card-hover step-card">
+            <div class="step-number">02</div>
+            <h3>Match &amp; Request</h3>
+            <p>Filter donors by exact blood group and city or post a prioritized blood request with hospital details and required units.</p>
+          </article>
+
+          <article class="card card-hover step-card">
+            <div class="step-number">03</div>
+            <h3>Coordinate &amp; Save Lives</h3>
+            <p>Send privacy-protected contact requests and track donation readiness directly from the interactive donor dashboard.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section" id="why-choose-us">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow-pill">Built for Healthcare Trust</span>
+          <h2>Why Choose BloodFinder</h2>
+          <p>Thoughtfully crafted to make emergency donor discovery fast, dignified, and accessible on any device.</p>
+        </div>
+
+        <div class="grid-4 reveal">
+          <article class="card card-hover feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+            <h3>Rapid Filtering</h3>
+            <p>Combine blood type, city name, and real-time availability status to narrow down eligible donors in seconds.</p>
+          </article>
+
+          <article class="card card-hover feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Privacy Protected</h3>
+            <p>Donor phone numbers and emails are never exposed publicly. Requests are initiated through structured contact forms.</p>
+          </article>
+
+          <article class="card card-hover feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3>Priority Triage</h3>
+            <p>Emergency blood requests support Critical, Urgent, and Standard triage tiers so urgent cases stand out immediately.</p>
+          </article>
+
+          <article class="card card-hover feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            </div>
+            <h3>Full Dashboards</h3>
+            <p>Dedicated Donor and Admin dashboards manage availability toggles, donation history, and active blood requests.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section (Clearly Labelled Sample Data) -->
+    <section class="stats-section" aria-labelledby="statsHeading">
+      <div class="container">
+        <div class="stats-header">
+          <div>
+            <h2 id="statsHeading">Community Impact Overview</h2>
+            <p>Illustrative healthcare metrics demonstrating platform scale and emergency readiness.</p>
+          </div>
+          <span class="badge badge-demo">Sample / Demo Data</span>
+        </div>
+
+        <div class="stats-grid reveal">
+          <div class="stat-tile">
+            <div class="stat-value">12,450+</div>
+            <div class="stat-label">Registered Donors (Sample)</div>
+          </div>
+          <div class="stat-tile">
+            <div class="stat-value">4,820+</div>
+            <div class="stat-label">Blood Units Matched (Sample)</div>
+          </div>
+          <div class="stat-tile">
+            <div class="stat-value">85+</div>
+            <div class="stat-label">Cities Covered (Sample)</div>
+          </div>
+          <div class="stat-tile">
+            <div class="stat-value">&lt; 18 min</div>
+            <div class="stat-label">Avg. Response Time (Sample)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials (Fictional Content) -->
+    <section class="section section-white" id="testimonials">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow-pill">Community Voices (Fictional Samples)</span>
+          <h2>Stories From Donors &amp; Families</h2>
+          <p>Sample testimonials illustrating how timely blood donor coordination supports hospitals and families.</p>
+        </div>
+
+        <div class="grid-3 reveal">
+          <article class="card card-hover testimonial-card">
+            <p class="testimonial-quote">
+              "When my father needed two units of O- blood late at night, filtering by city and availability helped our family connect with willing donors quickly and calmly."
+            </p>
+            <div class="testimonial-author">
+              <div class="avatar-circle" aria-hidden="true">RK</div>
+              <div>
+                <div class="author-name">Ritika Khanna (Fictional)</div>
+                <div class="author-role">Patient Family Member, Pune</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card-hover testimonial-card">
+            <p class="testimonial-quote">
+              "The donor dashboard makes it effortless to update my availability after every donation and keep track of my donation dates without sharing my phone number publicly."
+            </p>
+            <div class="testimonial-author">
+              <div class="avatar-circle" aria-hidden="true">AS</div>
+              <div>
+                <div class="author-name">Aarav Sharma (Fictional)</div>
+                <div class="author-role">Regular O+ Donor, Mumbai</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card-hover testimonial-card">
+            <p class="testimonial-quote">
+              "Having emergency priority tags and blood group filters in one clean interface streamlines how coordinators verify compatible donors during urgent cases."
+            </p>
+            <div class="testimonial-author">
+              <div class="avatar-circle" aria-hidden="true">DM</div>
+              <div>
+                <div class="author-name">Dr. Devika Menon (Fictional)</div>
+                <div class="author-role">Hospital Coordinator, Bengaluru</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div>
+            <h2>Need Blood Urgently or Ready to Donate?</h2>
+            <p>One voluntary donation can help save up to three lives. Submit a demo request or join our donor list today.</p>
+          </div>
+          <div class="cta-actions">
+            <a href="request-blood.html" class="btn btn-primary btn-lg">Request Blood</a>
+            <a href="register.html" class="btn btn-secondary btn-lg">Register as Donor</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-brand">
+            <img src="assets/images/logo.svg" alt="" width="34" height="34" />
+            <span>BloodFinder</span>
+          </a>
+          <p class="footer-desc">
+            A modern frontend-only Blood Donor Finder demonstration built with HTML5, CSS3, and Vanilla JavaScript to support emergency blood coordination.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="find-donors.html">Find Blood Donors</a></li>
+            <li><a href="request-blood.html">Request Blood</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Portals</h3>
+          <ul class="footer-links">
+            <li><a href="register.html">Donor Registration</a></li>
+            <li><a href="login.html">Demo Login</a></li>
+            <li><a href="donor-dashboard.html">Donor Dashboard</a></li>
+            <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Demo Contact</h3>
+          <ul class="footer-contact-list">
+            <li>Helpline: 1800-000-0108 (Demo)</li>
+            <li>Email: support@bloodfinder.example</li>
+            <li>Location: 24/7 Digital Coordination Desk</li>
+            <li><a href="contact.html">Send a Message &rarr;</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Blood Donor Finder. Frontend-only demonstration project.</span>
+        <span>All donor records, statistics, and testimonials are fictional sample data.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/donors.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

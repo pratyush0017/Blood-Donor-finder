@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Admin Dashboard for managing fictional sample blood donors and emergency blood requests." />
+  <title>Admin Dashboard — Blood Donor Finder</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand" aria-label="Blood Donor Finder Home">
+        <img src="assets/images/logo.svg" alt="" class="brand-logo" width="40" height="40" />
+        <span>Blood<span class="brand-accent">Finder</span></span>
+      </a>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="find-donors.html" class="nav-link">Find Donors</a></li>
+          <li><a href="request-blood.html" class="nav-link">Request Blood</a></li>
+          <li><a href="register.html" class="nav-link">Register</a></li>
+          <li><a href="donor-dashboard.html" class="nav-link">Donor Panel</a></li>
+          <li><a href="admin-dashboard.html" class="nav-link active">Admin</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="login.html" class="nav-link nav-link-cta">Demo Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="adminDashboardRoot">
+    <section class="page-hero">
+      <div class="container">
+        <ul class="breadcrumb" aria-label="Breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page">Admin Dashboard</li>
+        </ul>
+        <div class="panel-header">
+          <div class="page-hero-content">
+            <h1>Admin Operations Dashboard</h1>
+            <p>Monitor donor availability, triage emergency blood requests, and manage fictional sample records locally.</p>
+          </div>
+          <button type="button" id="resetDemoDataBtn" class="btn btn-outline btn-sm">Reset Sample Data</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- KPI Summary Cards -->
+        <div class="kpi-grid">
+          <article class="kpi-card">
+            <span class="kpi-label">Total Donors</span>
+            <span class="kpi-value" id="kpiTotalDonors">0</span>
+            <span class="kpi-sub">Fictional sample directory</span>
+          </article>
+          <article class="kpi-card">
+            <span class="kpi-label">Total Blood Requests</span>
+            <span class="kpi-value" id="kpiTotalRequests">0</span>
+            <span class="kpi-sub">All logged demo requests</span>
+          </article>
+          <article class="kpi-card">
+            <span class="kpi-label">Available Donors</span>
+            <span class="kpi-value is-success" id="kpiAvailableDonors">0</span>
+            <span class="kpi-sub">Ready for emergency outreach</span>
+          </article>
+          <article class="kpi-card">
+            <span class="kpi-label">Emergency Requests</span>
+            <span class="kpi-value is-primary" id="kpiEmergencyRequests">0</span>
+            <span class="kpi-sub">Active Critical &amp; Urgent cases</span>
+          </article>
+        </div>
+
+        <div class="dashboard-stack">
+          <!-- Donor Management Table -->
+          <section class="card" aria-labelledby="donorMgmtHeading">
+            <div class="panel-header">
+              <div>
+                <h2 id="donorMgmtHeading">Donor Management</h2>
+                <p>Search, filter, toggle availability, or remove demonstration donor records.</p>
+              </div>
+              <span class="badge badge-blood" id="adminDonorCount">0 records</span>
+            </div>
+
+            <div class="panel-controls">
+              <label for="adminDonorSearch" class="sr-only">Search donors</label>
+              <input type="search" id="adminDonorSearch" class="form-control" placeholder="Search name, city, or ID..." />
+
+              <label for="adminDonorBlood" class="sr-only">Filter donors by blood group</label>
+              <select id="adminDonorBlood" class="form-control">
+                <option value="all">All Blood Groups</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+              </select>
+
+              <label for="adminDonorAvail" class="sr-only">Filter donors by availability</label>
+              <select id="adminDonorAvail" class="form-control">
+                <option value="all">All Availability</option>
+                <option value="available">Available</option>
+                <option value="unavailable">Unavailable</option>
+              </select>
+            </div>
+
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Donor Name</th>
+                    <th>Blood Group</th>
+                    <th>City</th>
+                    <th>Last Donation</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminDonorsTableBody"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- Blood Request Management Table -->
+          <section class="card" aria-labelledby="requestMgmtHeading">
+            <div class="panel-header">
+              <div>
+                <h2 id="requestMgmtHeading">Blood Request Management</h2>
+                <p>Filter requests by blood type, priority, or status and update workflow progression.</p>
+              </div>
+              <span class="badge badge-critical" id="adminReqCount">0 requests</span>
+            </div>
+
+            <div class="panel-controls">
+              <label for="adminReqSearch" class="sr-only">Search blood requests</label>
+              <input type="search" id="adminReqSearch" class="form-control" placeholder="Search patient, hospital, city..." />
+
+              <label for="adminReqBlood" class="sr-only">Filter requests by blood group</label>
+              <select id="adminReqBlood" class="form-control">
+                <option value="all">All Blood Groups</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+              </select>
+
+              <label for="adminReqPriority" class="sr-only">Filter requests by priority</label>
+              <select id="adminReqPriority" class="form-control">
+                <option value="all">All Priorities</option>
+                <option value="Critical">Critical</option>
+                <option value="Urgent">Urgent</option>
+                <option value="Standard">Standard</option>
+              </select>
+
+              <label for="adminReqStatus" class="sr-only">Filter requests by status</label>
+              <select id="adminReqStatus" class="form-control">
+                <option value="all">All Statuses</option>
+                <option value="Pending">Pending</option>
+                <option value="Matched">Matched</option>
+                <option value="Fulfilled">Fulfilled</option>
+              </select>
+            </div>
+
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Request ID</th>
+                    <th>Patient</th>
+                    <th>Blood Group</th>
+                    <th>Hospital &amp; City</th>
+                    <th>Units</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminRequestsTableBody"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-brand">
+            <img src="assets/images/logo.svg" alt="" width="34" height="34" />
+            <span>BloodFinder</span>
+          </a>
+          <p class="footer-desc">
+            A modern frontend-only Blood Donor Finder demonstration built with HTML5, CSS3, and Vanilla JavaScript to support emergency blood coordination.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="find-donors.html">Find Blood Donors</a></li>
+            <li><a href="request-blood.html">Request Blood</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Portals</h3>
+          <ul class="footer-links">
+            <li><a href="register.html">Donor Registration</a></li>
+            <li><a href="login.html">Demo Login</a></li>
+            <li><a href="donor-dashboard.html">Donor Dashboard</a></li>
+            <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Demo Contact</h3>
+          <ul class="footer-contact-list">
+            <li>Helpline: 1800-000-0108 (Demo)</li>
+            <li>Email: support@bloodfinder.example</li>
+            <li>Location: 24/7 Digital Coordination Desk</li>
+            <li><a href="contact.html">Send a Message &rarr;</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Blood Donor Finder. Frontend-only demonstration project.</span>
+        <span>All donor records, statistics, and testimonials are fictional sample data.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/donors.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

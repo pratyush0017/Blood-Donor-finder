@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Demo Login portal for Blood Donor Finder frontend demonstration." />
+  <title>Demo Login — Blood Donor Finder</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand" aria-label="Blood Donor Finder Home">
+        <img src="assets/images/logo.svg" alt="" class="brand-logo" width="40" height="40" />
+        <span>Blood<span class="brand-accent">Finder</span></span>
+      </a>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="find-donors.html" class="nav-link">Find Donors</a></li>
+          <li><a href="request-blood.html" class="nav-link">Request Blood</a></li>
+          <li><a href="register.html" class="nav-link">Register</a></li>
+          <li><a href="donor-dashboard.html" class="nav-link">Donor Panel</a></li>
+          <li><a href="admin-dashboard.html" class="nav-link">Admin</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="login.html" class="nav-link nav-link-cta active">Demo Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <ul class="breadcrumb" aria-label="Breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page">Demo Login</li>
+        </ul>
+        <div class="page-hero-content">
+          <h1>Portal Demo Login</h1>
+          <p>Preview the Donor Dashboard or Admin Dashboard using this frontend-only demonstration login screen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="auth-section">
+      <div class="container auth-wrapper">
+        <div class="form-card">
+          <div class="alert alert-info" role="note">
+            <strong>Frontend Demo Only</strong>
+            <span>This is a clearly labelled demonstration login. No real authentication or backend verification is performed.</span>
+          </div>
+
+          <div class="demo-fill-group">
+            <button type="button" id="fillDemoDonor" class="btn btn-soft btn-sm">Fill Demo Donor</button>
+            <button type="button" id="fillDemoAdmin" class="btn btn-outline btn-sm">Fill Demo Admin</button>
+          </div>
+
+          <div id="loginAlert" class="hidden" role="status" aria-live="polite"></div>
+
+          <form id="demoLoginForm" method="post" action="#" data-future-endpoint="api/login.php" novalidate>
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label for="loginEmail" class="form-label">Email Address <span class="required-star">*</span></label>
+                <input type="email" id="loginEmail" name="email" class="form-control" placeholder="e.g., aarav.demo@bloodfinder.example" autocomplete="email" required />
+                <span class="field-error" id="loginEmailError"></span>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="loginPassword" class="form-label">Password <span class="required-star">*</span></label>
+                <input type="password" id="loginPassword" name="password" class="form-control" placeholder="Enter demo password (6+ chars)" autocomplete="current-password" required />
+                <span class="field-error" id="loginPasswordError"></span>
+              </div>
+
+              <div class="form-group full-width">
+                <div class="auth-row">
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="loginRemember" name="remember_me" />
+                    <span>Remember me</span>
+                  </label>
+                  <a href="#forgot-password" id="forgotPasswordLink">Forgot password?</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-lg btn-block">Login (Demo)</button>
+            </div>
+          </form>
+
+          <p class="auth-footer-note">
+            New to BloodFinder? <a href="register.html"><strong>Register as a Donor</strong></a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Forgot Password Demo Modal -->
+  <div class="modal-backdrop" id="forgotPasswordModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="forgotModalTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="forgotModalTitle">Reset Password (Demo)</h3>
+        <button type="button" class="modal-close" data-close-modal="forgotPasswordModal" aria-label="Close modal">&times;</button>
+      </div>
+      <p>Enter your demo email address below to simulate a password reset confirmation. No real email is sent.</p>
+      <form id="forgotPasswordForm" novalidate>
+        <div class="form-group">
+          <label for="resetEmail" class="form-label">Email Address <span class="required-star">*</span></label>
+          <input type="email" id="resetEmail" name="reset_email" class="form-control" placeholder="name@example.com" required />
+          <span class="field-error" id="resetEmailError"></span>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Send Demo Reset Link</button>
+          <button type="button" class="btn btn-outline" data-close-modal="forgotPasswordModal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-brand">
+            <img src="assets/images/logo.svg" alt="" width="34" height="34" />
+            <span>BloodFinder</span>
+          </a>
+          <p class="footer-desc">
+            A modern frontend-only Blood Donor Finder demonstration built with HTML5, CSS3, and Vanilla JavaScript to support emergency blood coordination.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="find-donors.html">Find Blood Donors</a></li>
+            <li><a href="request-blood.html">Request Blood</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Portals</h3>
+          <ul class="footer-links">
+            <li><a href="register.html">Donor Registration</a></li>
+            <li><a href="login.html">Demo Login</a></li>
+            <li><a href="donor-dashboard.html">Donor Dashboard</a></li>
+            <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Demo Contact</h3>
+          <ul class="footer-contact-list">
+            <li>Helpline: 1800-000-0108 (Demo)</li>
+            <li>Email: support@bloodfinder.example</li>
+            <li>Location: 24/7 Digital Coordination Desk</li>
+            <li><a href="contact.html">Send a Message &rarr;</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Blood Donor Finder. Frontend-only demonstration project.</span>
+        <span>All donor records, statistics, and testimonials are fictional sample data.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/donors.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

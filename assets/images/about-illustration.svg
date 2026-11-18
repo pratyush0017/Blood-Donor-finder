@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 380" width="520" height="380" role="img" aria-label="Community blood donor network illustration">
+  <defs>
+    <filter id="cardShad" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#212529" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect x="20" y="20" width="480" height="340" rx="24" fill="#FFFFFF" stroke="#ECEEF1" filter="url(#cardShad)"/>
+  <circle cx="260" cy="190" r="118" fill="#FFE5E5" opacity="0.45"/>
+  <circle cx="260" cy="190" r="76" fill="#FFE5E5" opacity="0.8"/>
+
+  <!-- Network lines -->
+  <line x1="260" y1="190" x2="128" y2="112" stroke="#D62828" stroke-width="2" stroke-dasharray="6 6" opacity="0.5"/>
+  <line x1="260" y1="190" x2="394" y2="112" stroke="#D62828" stroke-width="2" stroke-dasharray="6 6" opacity="0.5"/>
+  <line x1="260" y1="190" x2="128" y2="274" stroke="#D62828" stroke-width="2" stroke-dasharray="6 6" opacity="0.5"/>
+  <line x1="260" y1="190" x2="394" y2="274" stroke="#D62828" stroke-width="2" stroke-dasharray="6 6" opacity="0.5"/>
+
+  <!-- Center Hub -->
+  <circle cx="260" cy="190" r="46" fill="#D62828"/>
+  <path d="M260 163C260 163 240 185 240 198.5C240 209.5 249 218 260 218C271 218 280 209.5 280 198.5C280 185 260 163 260 163Z" fill="#FFFFFF"/>
+
+  <!-- Node 1 -->
+  <circle cx="128" cy="112" r="32" fill="#FFFFFF" stroke="#D62828" stroke-width="2.5"/>
+  <text x="128" y="117" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="14" font-weight="800" fill="#D62828">O+</text>
+
+  <!-- Node 2 -->
+  <circle cx="394" cy="112" r="32" fill="#FFFFFF" stroke="#D62828" stroke-width="2.5"/>
+  <text x="394" y="117" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="14" font-weight="800" fill="#D62828">A-</text>
+
+  <!-- Node 3 -->
+  <circle cx="128" cy="274" r="32" fill="#FFFFFF" stroke="#D62828" stroke-width="2.5"/>
+  <text x="128" y="279" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="14" font-weight="800" fill="#D62828">B+</text>
+
+  <!-- Node 4 -->
+  <circle cx="394" cy="274" r="32" fill="#FFFFFF" stroke="#D62828" stroke-width="2.5"/>
+  <text x="394" y="279" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="14" font-weight="800" fill="#D62828">AB-</text>
+</svg>
